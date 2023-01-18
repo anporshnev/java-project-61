@@ -16,6 +16,7 @@ public class Engine {
         System.out.print("May I have your name? ");
         gamerName = App.scanner.next();
         System.out.println("Hello, " + gamerName + "!");
+        App.scanner.close();
     }
 
     public static void showTaskDescription(String text) {
@@ -43,5 +44,6 @@ public class Engine {
         if (numberAttempts == REQUIRED_NUMBER_ATTEMPTS) {
             System.out.println("Congratulations, " + gamerName + "!");
         }
+        App.scanner.close();
     }
 }
