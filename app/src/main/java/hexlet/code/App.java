@@ -32,7 +32,7 @@ public class App {
             case "4" -> GCD.startGame();
             case "5" -> Progression.startGame();
             case "6" -> Prime.startGame();
-            case "0" -> scanner.close();
+            case "0" -> { }
             default -> System.out.println("There is no game under this number!");
         }
         scanner.close();
