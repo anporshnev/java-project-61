@@ -6,7 +6,7 @@ import java.util.StringJoiner;
 
 public class Progression {
     private static final int MAX_RANDOM_NUMBER = 100;
-    private static final int PROGRESSION_LENGTH = Engine.random.nextInt(5, 11);
+    private static final int PROGRESSION_LENGTH = Engine.RANDOM.nextInt(5, 11);
     private static final int[] PROGRESSION = new int[PROGRESSION_LENGTH];
     private static String trueAnswer;
 
@@ -22,8 +22,8 @@ public class Progression {
     }
 
     private static void generateProgression() {
-        var startNumber = Engine.random.nextInt(MAX_RANDOM_NUMBER) + 1;
-        var step = Engine.random.nextInt(MAX_RANDOM_NUMBER) + 1;
+        var startNumber = Engine.RANDOM.nextInt(MAX_RANDOM_NUMBER) + 1;
+        var step = Engine.RANDOM.nextInt(MAX_RANDOM_NUMBER) + 1;
 
         var currentNumber = startNumber;
         for (int j = 0; j < PROGRESSION_LENGTH; j++) {
@@ -33,7 +33,7 @@ public class Progression {
     }
 
     private static String generateQuestion() {
-        var indexHiddenElement = Engine.random.nextInt(PROGRESSION_LENGTH);
+        var indexHiddenElement = Engine.RANDOM.nextInt(PROGRESSION_LENGTH);
         var result = new StringJoiner(" ");
 
         for (int i = 0; i < PROGRESSION_LENGTH; i++) {

@@ -14,7 +14,7 @@ public class Prime {
 
     private static void createTasks() {
         for (var i = 0; i < Engine.REQUIRED_NUMBER_ATTEMPTS; i++) {
-            var randomNumber = Engine.random.nextInt(MAX_RANDOM_NUMBER) + 1;
+            var randomNumber = Engine.RANDOM.nextInt(MAX_RANDOM_NUMBER) + 1;
             var trueAnswer = isPrime(randomNumber) ? "yes" : "no";
             Engine.QUESTIONS[i] = Integer.toString(randomNumber);
             Engine.TRUE_ANSWERS[i] = trueAnswer;

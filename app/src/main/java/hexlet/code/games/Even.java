@@ -7,7 +7,7 @@ public class Even {
 
     public static void startGame() {
         for (var i = 0; i < Engine.REQUIRED_NUMBER_ATTEMPTS; i++) {
-            var randomNumber = Engine.random.nextInt(MAX_RANDOM_NUMBER) + 1;
+            var randomNumber = Engine.RANDOM.nextInt(MAX_RANDOM_NUMBER) + 1;
             var trueAnswer = randomNumber % 2 == 0 ? "yes" : "no";
             Engine.QUESTIONS[i] = Integer.toString(randomNumber);
             Engine.TRUE_ANSWERS[i] = trueAnswer;

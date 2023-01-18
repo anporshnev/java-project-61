@@ -9,9 +9,9 @@ public class Calc {
     public static void startGame() {
         for (var i = 0; i < Engine.REQUIRED_NUMBER_ATTEMPTS; i++) {
             String[] operands = {"+", "-", "*"};
-            var firstRandomNumber = Engine.random.nextInt(MAX_RANDOM_NUMBER) + 1;
-            var twoRandomNumber = Engine.random.nextInt(MAX_RANDOM_NUMBER) + 1;
-            var randomIndex = Engine.random.nextInt(MAX_RANDOM_INDEX);
+            var firstRandomNumber = Engine.RANDOM.nextInt(MAX_RANDOM_NUMBER) + 1;
+            var twoRandomNumber = Engine.RANDOM.nextInt(MAX_RANDOM_NUMBER) + 1;
+            var randomIndex = Engine.RANDOM.nextInt(MAX_RANDOM_INDEX);
             var operand = operands[randomIndex];
 
             var trueAnswer = switch (operand) {

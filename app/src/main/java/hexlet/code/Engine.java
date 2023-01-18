@@ -3,7 +3,7 @@ package hexlet.code;
 import java.util.Random;
 
 public class Engine {
-    public static Random random = new Random();
+    public static final Random RANDOM = new Random();
     private static String gamerName;
     public static final int REQUIRED_NUMBER_ATTEMPTS = 3;
     private static int numberAttempts = 0;
@@ -14,7 +14,7 @@ public class Engine {
         System.out.println();
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
-        gamerName = App.scanner.next();
+        gamerName = App.SCANNER.next();
         System.out.println("Hello, " + gamerName + "!");
     }
 
@@ -26,7 +26,7 @@ public class Engine {
         for (var i = 0; i < Engine.REQUIRED_NUMBER_ATTEMPTS; i++) {
             System.out.println("Question: " + QUESTIONS[i]);
             System.out.print("Your answer: ");
-            var answer = App.scanner.next();
+            var answer = App.SCANNER.next();
 
             if (answer.equals(TRUE_ANSWERS[i])) {
                 System.out.println("Correct!");

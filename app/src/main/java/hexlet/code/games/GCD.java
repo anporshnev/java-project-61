@@ -7,8 +7,8 @@ public class GCD {
 
     public static void startGame() {
         for (var i = 0; i < Engine.REQUIRED_NUMBER_ATTEMPTS; i++) {
-            var firstRandomNumber = Engine.random.nextInt(MAX_RANDOM_NUMBER) + 1;
-            var twoRandomNumber = Engine.random.nextInt(MAX_RANDOM_NUMBER) + 1;
+            var firstRandomNumber = Engine.RANDOM.nextInt(MAX_RANDOM_NUMBER) + 1;
+            var twoRandomNumber = Engine.RANDOM.nextInt(MAX_RANDOM_NUMBER) + 1;
             var gcd = Integer.toString(gcd(firstRandomNumber, twoRandomNumber));
 
             Engine.QUESTIONS[i] = "%s %s".formatted(firstRandomNumber, twoRandomNumber);

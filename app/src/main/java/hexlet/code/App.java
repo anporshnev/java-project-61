@@ -9,7 +9,8 @@ import hexlet.code.games.Even;
 import java.util.Scanner;
 
 public class App {
-    public static Scanner scanner = new Scanner(System.in);
+    public static final Scanner SCANNER = new Scanner(System.in);
+
     public static void main(String[] args) {
         String menuItems = """
                 1 - Greet
@@ -23,7 +24,7 @@ public class App {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println(menuItems);
         System.out.print("Your choice: ");
-        String choice = scanner.next();
+        String choice = SCANNER.next();
 
         switch (choice) {
             case "1" -> Engine.greet();
@@ -35,6 +36,6 @@ public class App {
             case "0" -> { }
             default -> System.out.println("There is no game under this number!");
         }
-        scanner.close();
+        SCANNER.close();
     }
 }
