@@ -32,7 +32,7 @@ public class Progression {
     }
 
     private static String generateQuestion() {
-        var indexHiddenElement = Engine.random.nextInt(PROGRESSION_LENGTH + 1);
+        var indexHiddenElement = Engine.random.nextInt(PROGRESSION_LENGTH);
         var result = new StringJoiner(" ");
 
         for (int i = 0; i < PROGRESSION_LENGTH; i++) {
