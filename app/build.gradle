@@ -15,7 +15,7 @@ compileJava {
 }
 
 application {
-    mainClass = 'org.gradle.sample.Main'
+    mainClass = 'hexlet.code.App'
 }
 
 dependencies {
