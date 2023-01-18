@@ -3,14 +3,16 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class GCD {
+    private static final int MAX_RANDOM_NUMBER = 100;
+
     public static void startGame() {
         for (var i = 0; i < Engine.REQUIRED_NUMBER_ATTEMPTS; i++) {
-            var firstRandomNumber = Engine.random.nextInt(100) + 1;
-            var twoRandomNumber = Engine.random.nextInt(100) + 1;
+            var firstRandomNumber = Engine.random.nextInt(MAX_RANDOM_NUMBER) + 1;
+            var twoRandomNumber = Engine.random.nextInt(MAX_RANDOM_NUMBER) + 1;
             var gcd = Integer.toString(gcd(firstRandomNumber, twoRandomNumber));
 
-            Engine.questions[i] = "%s %s".formatted(firstRandomNumber, twoRandomNumber);
-            Engine.trueAnswers[i] = gcd;
+            Engine.QUESTIONS[i] = "%s %s".formatted(firstRandomNumber, twoRandomNumber);
+            Engine.TRUE_ANSWERS[i] = gcd;
         }
 
         Engine.greet();

@@ -4,11 +4,11 @@ import java.util.Random;
 
 public class Engine {
     public static Random random = new Random();
-    public static String gamerName;
+    private static String gamerName;
     public static final int REQUIRED_NUMBER_ATTEMPTS = 3;
-    public static int numberAttempts = 0;
-    public static String[] questions = new String[REQUIRED_NUMBER_ATTEMPTS];
-    public static String[] trueAnswers = new String[REQUIRED_NUMBER_ATTEMPTS];
+    private static int numberAttempts = 0;
+    public static final String[] QUESTIONS = new String[REQUIRED_NUMBER_ATTEMPTS];
+    public static final String[] TRUE_ANSWERS = new String[REQUIRED_NUMBER_ATTEMPTS];
 
     public static void greet() {
         System.out.println();
@@ -24,17 +24,17 @@ public class Engine {
 
     public static void startTask() {
         for (var i = 0; i < Engine.REQUIRED_NUMBER_ATTEMPTS; i++) {
-            System.out.println("Question: " + questions[i]);
+            System.out.println("Question: " + QUESTIONS[i]);
             System.out.print("Your answer: ");
             var answer = App.scanner.next();
 
-            if (answer.equals(trueAnswers[i])) {
+            if (answer.equals(TRUE_ANSWERS[i])) {
                 System.out.println("Correct!");
             } else {
                 var message = """
                         '%s' is wrong answer ;(. Correct answer was '%s'.
                         Let's try again, %s!
-                        """.formatted(answer, trueAnswers[i], gamerName);
+                        """.formatted(answer, TRUE_ANSWERS[i], gamerName);
                 System.out.print(message);
                 break;
             }

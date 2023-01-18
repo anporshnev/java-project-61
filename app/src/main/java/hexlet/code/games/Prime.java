@@ -3,6 +3,8 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Prime {
+    private static final int MAX_RANDOM_NUMBER = 100;
+
     public static void startGame() {
         createTasks();
         Engine.greet();
@@ -12,10 +14,10 @@ public class Prime {
 
     private static void createTasks() {
         for (var i = 0; i < Engine.REQUIRED_NUMBER_ATTEMPTS; i++) {
-            var randomNumber = Engine.random.nextInt(100) + 1;
+            var randomNumber = Engine.random.nextInt(MAX_RANDOM_NUMBER) + 1;
             var trueAnswer = isPrime(randomNumber) ? "yes" : "no";
-            Engine.questions[i] = Integer.toString(randomNumber);
-            Engine.trueAnswers[i] = trueAnswer;
+            Engine.QUESTIONS[i] = Integer.toString(randomNumber);
+            Engine.TRUE_ANSWERS[i] = trueAnswer;
         }
     }
 

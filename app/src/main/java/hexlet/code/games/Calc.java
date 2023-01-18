@@ -3,12 +3,15 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Calc {
+    private static final int MAX_RANDOM_NUMBER = 100;
+    private static final int MAX_RANDOM_INDEX = 3;
+
     public static void startGame() {
         for (var i = 0; i < Engine.REQUIRED_NUMBER_ATTEMPTS; i++) {
             String[] operands = {"+", "-", "*"};
-            var firstRandomNumber = Engine.random.nextInt(100) + 1;
-            var twoRandomNumber = Engine.random.nextInt(100) + 1;
-            var randomIndex = Engine.random.nextInt(3);
+            var firstRandomNumber = Engine.random.nextInt(MAX_RANDOM_NUMBER) + 1;
+            var twoRandomNumber = Engine.random.nextInt(MAX_RANDOM_NUMBER) + 1;
+            var randomIndex = Engine.random.nextInt(MAX_RANDOM_INDEX);
             var operand = operands[randomIndex];
 
             var trueAnswer = switch (operand) {
@@ -17,8 +20,8 @@ public class Calc {
                 default -> Integer.toString(firstRandomNumber * twoRandomNumber);
             };
 
-            Engine.questions[i] = "%s %s %s".formatted(firstRandomNumber, operand, twoRandomNumber);
-            Engine.trueAnswers[i] = trueAnswer;
+            Engine.QUESTIONS[i] = "%s %s %s".formatted(firstRandomNumber, operand, twoRandomNumber);
+            Engine.TRUE_ANSWERS[i] = trueAnswer;
         }
 
         Engine.greet();
